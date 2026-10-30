@@ -1,0 +1,36 @@
+{
+  "name": "HighScore",
+  "type": "object",
+  "properties": {
+    "player_name": {
+      "type": "string",
+      "description": "Name shown on the leaderboard"
+    },
+    "score": {
+      "type": "number",
+      "description": "Points earned during the flight"
+    },
+    "distance": {
+      "type": "number",
+      "description": "Distance flown in meters"
+    }
+  },
+  "required": [
+    "player_name",
+    "score"
+  ],
+  "rls": {
+    "read": {},
+    "create": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
